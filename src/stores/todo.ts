@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export interface Todo {
+export type TodoItem = {
   id: string
   title: string
   done: boolean
@@ -8,11 +8,11 @@ export interface Todo {
 
 export const useTodoStore = defineStore('todo', {
   state: () => ({
-    todos: [] as Todo[],
+    todos: [] as TodoItem[],
   }),
   actions: {
     add(title: string) {
-      const todo: Todo = {
+      const todo: TodoItem = {
         id: crypto.randomUUID(),
         title,
         done: false,

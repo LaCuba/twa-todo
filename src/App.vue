@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
     <footer class="h-[60px]">
       <nav class="flex items-center justify-center gap-10">
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Tasks</RouterLink>
         <RouterLink to="/graph">Graph</RouterLink>
       </nav>
     </footer>
