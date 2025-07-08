@@ -29,8 +29,11 @@ type Node = {
 
 type Link = {
   id: string
-  source: string
-  target: string
+  //TODO: Исправить тип, сейчас string | Node. В force мутируются линки
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  source: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  target: any
   x?: number
   y?: number
 }
@@ -96,7 +99,7 @@ function setupCanvasGraph() {
     .force(
       'link',
       d3
-        .forceLink(links)
+        .forceLink<Node, Link>(links)
         .id((d) => d.id)
         .distance(300),
     )
