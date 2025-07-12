@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
+
+onMounted(() => {
+  const tg = window.Telegram?.WebApp;
+  tg?.ready();
+  tg?.expand();
+})
+
 </script>
 
 <template>
