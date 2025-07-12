@@ -31,7 +31,7 @@ function saveEdit(id: string) {
 
 function handleAlertTgInfo() {
   const tg = window?.Telegram?.WebApp;
-  alert(tg?.initData)
+  alert(JSON.stringify(tg))
 }
 
 onMounted(() => store.load())
